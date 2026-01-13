@@ -1,0 +1,212 @@
+/* Enrate Bootstrap customisations: keep small and focused. */
+
+:root {
+  /* aligns with Bootstrap primary default vibe */
+  --enrate-brand: #0b5ed7;
+  --brand-h: clamp(64px, 7.2vw, 92px);
+}
+
+
+.skip-link{
+  position:absolute;
+  top:-40px;
+  left:0;
+  background:#000;
+  color:#fff;
+  padding:.5rem .75rem;
+  z-index:2000;
+}
+.skip-link:focus{ top:0; }
+
+.brand-logo{
+  height: var(--brand-h);
+  width: auto;
+  display:block;
+}
+
+.brand-stack{
+  height: var(--brand-h);
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brand-title{
+  font-weight: 800;
+  letter-spacing: .3px;
+  font-size: clamp(3.0rem, 5.8vw, 4.3rem);
+  line-height: 1;
+  color: #111;
+  margin: 0;
+}
+
+.brand-subtitle{
+  font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+  line-height: 1.1;
+  color: #6c757d;
+  margin: 0;
+}
+
+.navbar .nav-link{
+  position: relative;
+  font-weight: 600;
+  border-radius: 0;
+  padding: .5rem .75rem;
+  background: transparent;
+  transition: color .15s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus{
+  color: var(--bs-primary);
+  background: transparent;
+}
+
+/* Underline follows the text width (span.nav-text), not the full link padding */
+.navbar .nav-link .nav-text{
+  position: relative;
+  display: inline-block;
+}
+
+.navbar .nav-link .nav-text::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-.25rem;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.navbar .nav-link:hover .nav-text::after,
+.navbar .nav-link:focus .nav-text::after{
+  opacity: .45;
+  transform: scaleX(1);
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link[aria-current="page"]{
+  color: var(--bs-primary);
+  font-weight: 700;
+  background: transparent;
+}
+
+.navbar .nav-link.active .nav-text::after,
+.navbar .nav-link[aria-current="page"] .nav-text::after{
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.navbar .dropdown-menu{
+  border-radius: .9rem;
+  box-shadow: 0 .75rem 2rem rgba(0,0,0,.08);
+}
+
+.navbar .dropdown-item{
+  border-radius: .55rem;
+  transition: background-color .15s ease, color .15s ease;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus{
+  background: rgba(13,110,253,.10);
+  color: var(--bs-primary);
+}
+
+.navbar .dropdown-item.active,
+.navbar .dropdown-item[aria-current="page"]{
+  background: rgba(13,110,253,.18);
+  color: var(--bs-primary);
+  font-weight: 700;
+}
+
+@media (min-width: 992px){
+  /* Desktop: open dropdown on hover for clearer mouseover behaviour */
+  .navbar .dropdown:hover > .dropdown-menu{
+    display:block;
+  }
+  .navbar .dropdown:hover > .dropdown-toggle{
+    color: var(--bs-primary);
+    background: transparent;
+  }
+}
+
+.navbar .dropdown:hover > .dropdown-toggle{
+    background: rgba(13,110,253,.10);
+    color: var(--bs-primary);
+  }
+}
+
+
+.hero{
+  background: radial-gradient(1200px circle at 20% 10%, rgba(13,110,253,.15), transparent 40%),
+              radial-gradient(900px circle at 80% 30%, rgba(25,135,84,.14), transparent 45%),
+              linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.hero h1{
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.hover-lift{
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.hover-lift:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,.08);
+}
+@media (prefers-reduced-motion: reduce){
+  .hover-lift{ transition:none; }
+  .hover-lift:hover{ transform:none; }
+}
+
+.icon-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:2.5rem;
+  height:2.5rem;
+  border-radius: .75rem;
+  background: rgba(13,110,253,.12);
+}
+
+.kpi{
+  border-left: .25rem solid rgba(13,110,253,.35);
+  padding-left: .75rem;
+}
+
+.callout{
+  border-left: .25rem solid rgba(25,135,84,.45);
+}
+
+.table thead th{
+  white-space: nowrap;
+}
+
+
+
+/* Fixed back-to-top button (visible on scroll) */
+#backToTop{
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1030;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity .15s ease, transform .15s ease;
+}
+#backToTop.show{
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+@media (prefers-reduced-motion: reduce){
+  #backToTop{ transition:none; }
+}

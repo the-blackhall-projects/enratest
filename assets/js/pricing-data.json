@@ -1,0 +1,47 @@
+{
+  "source": "Enrate BER Cert pricelist 2024",
+  "applies_to": "Residential dwellings up to 275 m\u00b2",
+  "base_prices": {
+    "Apartment": {
+      "1": 210,
+      "2": 220,
+      "3": 235,
+      "4": 245,
+      "5": null
+    },
+    "Mid-Terrace House": {
+      "1": 220,
+      "2": 235,
+      "3": 245,
+      "4": 265,
+      "5": 285
+    },
+    "Semi-D or End of Terrace": {
+      "1": 240,
+      "2": 240,
+      "3": 250,
+      "4": 265,
+      "5": 285
+    },
+    "Detached House": {
+      "1": 250,
+      "2": 250,
+      "3": 260,
+      "4": 275,
+      "5": 295
+    }
+  },
+  "add_ons": {
+    "extension_heated_each": 10,
+    "heated_conservatory_sunroom_each": 10,
+    "postal_delivery": 5
+  },
+  "special_cases": {
+    "update_ber_on_file": 130,
+    "extensively_rebuilt_house": 350
+  },
+  "notes": [
+    "All prices are fully inclusive and include the SEAI registration fee of \u20ac30.",
+    "Ignore unheated garages when counting extensions."
+  ]
+}
