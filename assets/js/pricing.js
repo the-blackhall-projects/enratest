@@ -1,16 +1,16 @@
 (() => {
-  // 2024 Enrate BER price list (homes up to 275 m²)
+  // 2026 Enrate BER price list (homes up to 275 m²)
   const basePrices = {
-    "Apartment": { "1": 210, "2": 220, "3": 235, "4": 245, "5": null },
-    "Mid-Terrace House": { "1": 220, "2": 235, "3": 245, "4": 265, "5": 285 },
-    "Semi-D or End of Terrace": { "1": 240, "2": 240, "3": 250, "4": 265, "5": 285 },
-    "Detached House": { "1": 250, "2": 250, "3": 260, "4": 275, "5": 295 }
+    "Apartment": { "1": 215, "2": 225, "3": 240, "4": 250, "5": null },
+    "Mid-Terrace House": { "1": 225, "2": 235, "3": 250, "4": 270, "5": 290 },
+    "Semi-D or End of Terrace": { "1": 245, "2": 245, "3": 255, "4": 270, "5": 290 },
+    "Detached House": { "1": 255, "2": 255, "3": 265, "4": 280, "5": 300 }
   };
 
   const ADD_EXTENSION = 10;     // per extension (heated)
   const ADD_SUNROOM = 10;       // per heated conservatory/sunroom
   const UPDATE_ON_FILE = 130;   // update a recent/valid BER on file
-  const EXT_REBUILT = 350;      // extensively rebuilt house
+  const EXT_REBUILT = 380;      // extensively rebuilt house
   const POSTAGE = 10;            // postal delivery
   const LOCAL_DISCOUNT = 10;    // local area discount            // postal delivery
 
